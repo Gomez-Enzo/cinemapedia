@@ -2,10 +2,38 @@ import 'package:cinemapedia/domain/entities/movie.dart';
 import 'package:cinemapedia/presentation/providers/movies/movies_repository_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+//get now_playing
 final nowPlayingMoviesProvider =
     StateNotifierProvider<MoviesNotifire, List<Movie>>(
   (ref) {
     final fetchMoreMovies = ref.watch(movieRepositoryProvider).getNowPlaying;
+    return MoviesNotifire(fetchMoreMovies: fetchMoreMovies);
+  },
+);
+
+// get popular
+final popularMoviesProvider =
+    StateNotifierProvider<MoviesNotifire, List<Movie>>(
+  (ref) {
+    final fetchMoreMovies = ref.watch(movieRepositoryProvider).getPopular;
+    return MoviesNotifire(fetchMoreMovies: fetchMoreMovies);
+  },
+);
+
+//get upcoming
+final upcomingMoviesProvider =
+    StateNotifierProvider<MoviesNotifire, List<Movie>>(
+  (ref) {
+    final fetchMoreMovies = ref.watch(movieRepositoryProvider).getUpcoming;
+    return MoviesNotifire(fetchMoreMovies: fetchMoreMovies);
+  },
+);
+
+//get top_rated
+final topRatedMoviesProvider =
+    StateNotifierProvider<MoviesNotifire, List<Movie>>(
+  (ref) {
+    final fetchMoreMovies = ref.watch(movieRepositoryProvider).getTopRated;
     return MoviesNotifire(fetchMoreMovies: fetchMoreMovies);
   },
 );
