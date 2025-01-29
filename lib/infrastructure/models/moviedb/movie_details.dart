@@ -155,13 +155,13 @@ class BelongsToCollection {
 }
 
 class Genre {
-  final int id;
-  final String name;
-
   Genre({
     required this.id,
     required this.name,
   });
+
+  final int id;
+  final String name;
 
   factory Genre.fromJson(Map<String, dynamic> json) => Genre(
         id: json["id"],
@@ -175,17 +175,17 @@ class Genre {
 }
 
 class ProductionCompany {
-  final int id;
-  final String logoPath;
-  final String name;
-  final String originCountry;
-
   ProductionCompany({
     required this.id,
     required this.logoPath,
     required this.name,
     required this.originCountry,
   });
+
+  final int id;
+  final String? logoPath;
+  final String name;
+  final String originCountry;
 
   factory ProductionCompany.fromJson(Map<String, dynamic> json) =>
       ProductionCompany(
@@ -204,13 +204,13 @@ class ProductionCompany {
 }
 
 class ProductionCountry {
-  final String iso31661;
-  final String name;
-
   ProductionCountry({
     required this.iso31661,
     required this.name,
   });
+
+  final String iso31661;
+  final String name;
 
   factory ProductionCountry.fromJson(Map<String, dynamic> json) =>
       ProductionCountry(
@@ -225,15 +225,15 @@ class ProductionCountry {
 }
 
 class SpokenLanguage {
-  final String englishName;
-  final String iso6391;
-  final String name;
-
   SpokenLanguage({
     required this.englishName,
     required this.iso6391,
     required this.name,
   });
+
+  final String englishName;
+  final String iso6391;
+  final String name;
 
   factory SpokenLanguage.fromJson(Map<String, dynamic> json) => SpokenLanguage(
         englishName: json["english_name"],
